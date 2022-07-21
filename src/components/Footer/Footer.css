@@ -1,0 +1,10 @@
+.footer {
+    /* Esto lo ubique con margin, pero no creo que sea la manera mas correcta */
+    margin-top: 100rem;
+    background-color: rgb(33,37,41);
+    font-size: 1.5rem;
+    color: #eeeeee;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+}
