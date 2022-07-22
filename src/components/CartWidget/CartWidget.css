@@ -3,3 +3,8 @@
     width: 2.4rem;
     height: 2.4rem;
 }
+
+.contador {
+    position: absolute;
+    transform: translateX(200%) translateY(70%);
+}
