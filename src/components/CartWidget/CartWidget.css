@@ -1,10 +1,10 @@
-.carrito {
+.cart {
     margin: 2rem;
     width: 2.4rem;
     height: 2.4rem;
 }
 
-.contador {
+.counter {
     position: absolute;
     transform: translateX(200%) translateY(70%);
 }

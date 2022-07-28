@@ -1,8 +1,9 @@
-.NavBar_img {
+.navbarLogo {
     width: 6.4rem;
     height: 6.4rem;
 }
 
-.tamañoCategoria {
+.font {
     font-size: 1.5rem;
+    font-weight: 300;
 }
