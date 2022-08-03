@@ -17,6 +17,9 @@
 }
 
 .detailBtn {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
   width: 15rem;
   height: 5rem;
   font-size: 1.75rem !important;

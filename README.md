@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# Atlas Tech
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Demo
 
-## Available Scripts
 
-In the project directory, you can run:
+## _Continuacion del proyecto creado en el curso de Coder House "Desarrollo Web"_
+Para ver en mas detalle los motivos y razon que llevaron a crear nuestro proyecto puede leer en [este](https://github.com/JEmperador/coderHouse_desarrolloWeb) perositorio de github, junto con la primera version del mismo (creador puramente a partir de HTML y CSS)
 
-### `yarn start`
+## Tecnologias
+-   [React](https://reactjs.org/) - Libreria de JavaScript para trabajar con el FrontEnd del proyecto.
+-   [Yarn](https://yarnpkg.com/) - Gestor de Dependencias enfocado en la velocidad y seguridad.
+-   [React Router](https://reactrouter.com/docs/en/v6) - Librería para crear las distintas rutas en la aplicación realizada en ReactJS.
+-   [React Bootstrap](https://react-bootstrap.github.io/) - Librería de componentes y estilos CSS.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Instalación
+-   Es necesario contar on un editor de codigo en su PC, se recomienda [Visual Studio Code](https://code.visualstudio.com/).
+-   Debe contar tambien con una termina, se recomienda [GitBash](https://git-scm.com/)
+-   Abrir GitBash en la carpeta donde clonara el repositorio.
+-   Ingrese a este [link](https://github.com/JEmperador/react_coderHouse.git) para obtener repositorio con el protocolo HTTPS.
+-   En la termina GitBash utilice siguiente línea de comando:
+    ```bash
+    $ git clone <repositorio HTTPS>
+    ```
+-   Sobre la carpeta del repositorio clonado hacer click derecho y seleccionar la opción __Abrir con code__.
+-   Instalar [node.js](https://nodejs.org/en/) en su PC.
+-   Desde la terminal de __Visual Studio Code__ instalar yarn con las siguientes líneas de comando:
+    ```bash
+    $ npm install --global yarn
+    $ yarn
+    ```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Rutas
+| Ruta                    | Componente          | Comentario           |
+|-------------------------|---------------------|----------------------|
+| '/'                     | ItemListContainer   | Pantalla Principal   |
+| '/category/:categoryId' | ItemListContainer   | Filtro por Categoria |
+| '/detail/:detailId'     | ItemDetailContainer | Detalle del Producto |
+| '*'                     | Page404             | Ruta erronea         |

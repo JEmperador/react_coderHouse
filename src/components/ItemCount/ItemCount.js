@@ -18,11 +18,11 @@ function ItemCount({ stock, initial, onAdd }) {
       <div className="d-flex justify-content-center">
         <ButtonToolbar>
           <ButtonGroup>
-            <Button onClick={() => counter(-1)} disabled={count === initial}>
+            <Button className="quantityBtn" onClick={() => counter(-1)} disabled={count === initial}>
               -
             </Button>
-            <div className="quantity text-center">{count}</div>
-            <Button onClick={() => counter(+1)} disabled={count === stock}>
+            <div className="quantity">{count}</div>
+            <Button className="quantityBtn" onClick={() => counter(+1)} disabled={count === stock}>
               +
             </Button>
           </ButtonGroup>

@@ -1,0 +1,37 @@
+.detailContainer {
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.description {
+    margin-top: 5rem !important;
+    margin-bottom: 10rem;
+    display: flex;
+    justify-content: center;
+}
+
+.textName {
+    font-size: 2rem;
+}
+
+.textCategory {
+    font-size: 1.5rem;
+}
+
+.textPrice {
+    font-size: 2rem;
+}
+
+.detailImg {
+    width: 40rem;
+    height: 40rem;
+}
