@@ -13,5 +13,7 @@
 }
 
 .addBtn {
-    width: 10rem;
+    font-size: 2rem !important;
+    font-weight: 500 !important;
+    width: 11rem;
 }

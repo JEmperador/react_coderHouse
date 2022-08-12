@@ -12,3 +12,8 @@
 .nav-link {
     padding: 0 !important;
 }
+
+.counter {
+    position: absolute;
+    transform: translateX(200%) translateY(70%);
+}

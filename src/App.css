@@ -16,6 +16,13 @@ html {
   font-size: 62.5% !important;
 }
 
+.title {
+  font-size: 3rem;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 2rem;
+}
+
 ::-webkit-scrollbar {
   width: 0px;
 }

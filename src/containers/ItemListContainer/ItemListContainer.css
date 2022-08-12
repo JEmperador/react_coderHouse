@@ -4,13 +4,6 @@
     flex-wrap: wrap;
 }
 
-.title {
-    font-size: 3rem;
-    font-weight: 400;
-    text-align: center;
-    margin-top: 2rem;
-}
-
 .loading {
     display: flex;
     justify-content: center;

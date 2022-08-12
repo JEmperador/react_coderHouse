@@ -11,8 +11,8 @@ function ItemListContainer(props) {
   const { categoryId } = useParams();
 
   useEffect(() => {
-    const typeGetARgument = categoryId ? getProductsByCategory : getProducts;
-    typeGetARgument(categoryId)
+    const typeGetArgument = categoryId ? getProductsByCategory : getProducts;
+    typeGetArgument(categoryId)
       .then((products) => {
         setProducts(products);
         setLoading(true);
@@ -24,7 +24,7 @@ function ItemListContainer(props) {
 
   return (
     <>
-      <h1 className="title">{props.title}</h1>
+      <h1 className="title">{`${props.title} ${categoryId || ''}`}</h1>
       {!loading && <Delay />}
       {loading && (
         <div className="productsList m-5">

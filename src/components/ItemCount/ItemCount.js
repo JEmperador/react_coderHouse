@@ -2,15 +2,11 @@ import { useState } from "react";
 import { Button, ButtonGroup, ButtonToolbar } from "react-bootstrap";
 import "../ItemCount/ItemCount.css";
 
-function ItemCount({ stock, initial, onAdd }) {
+function ItemCount({ stock = 0, initial = 1, onAdd }) {
   const [count, setCount] = useState(initial);
 
   const counter = (unit) => {
     setCount(count + unit);
-  };
-
-  const toCart = () => {
-    console.log(count === 1 ? `Agregaste ${count} unidad` : `Agregaste ${count} unidades`);
   };
 
   return (
@@ -30,8 +26,8 @@ function ItemCount({ stock, initial, onAdd }) {
       </div>
 
       <div className="d-flex justify-content-center">
-        <Button variant="primary" size="lg" className="m-2 addBtn" onClick={toCart}>
-          <h3>Agregar</h3>
+        <Button variant="primary" size="lg" className="m-2 addBtn" onClick={() => onAdd(count)}>
+          Agregar
         </Button>
       </div>
     </div>

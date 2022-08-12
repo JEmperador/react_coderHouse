@@ -21,15 +21,15 @@ function ItemDetailContainer(props) {
   }, [detailId]);
 
   return (
-    <>
+    <div>
+      <h1 className="title">{props.title}</h1>
       {!loading && <Delay />}
       {loading && (
         <div>
-          <h1 className="title">{props.title}</h1>
           <ItemDetail {...product} />
         </div>
       )}
-    </>
+    </div>
   );
 }
 
