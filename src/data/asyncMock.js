@@ -122,7 +122,7 @@ export const getProducts = () => {
 export const getProductsByCategory = (categoryId) => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(products.filter(product => product.category === categoryId));
+      resolve(products.filter(products => products.category === categoryId));
     }, 1000);
   });
 };
