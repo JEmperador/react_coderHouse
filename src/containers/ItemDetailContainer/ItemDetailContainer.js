@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { getProductById } from "../../data/asyncMock";
 import { useParams } from "react-router-dom";
 import ItemDetail from "../../components/ItemDetail/ItemDetail";
 import Delay from "../../components/Delay/Delay";
+import { getDoc, doc } from "firebase/firestore";
+import { db } from "../../service/firebase";
 
 function ItemDetailContainer(props) {
   const [product, setProduct] = useState();
@@ -10,13 +11,17 @@ function ItemDetailContainer(props) {
   const { detailId } = useParams();
 
   useEffect(() => {
-    getProductById(detailId)
-      .then((product) => {
+    getDoc(doc(db, "products", detailId))
+      .then((response) => {
+        const data = response.data();
+        const product = { id: response.id, ...data };
         setProduct(product);
-        setLoading(true);
       })
       .catch((error) => {
         console.log(error);
+      })
+      .finally(() => {
+        setLoading(true);
       });
   }, [detailId]);
 

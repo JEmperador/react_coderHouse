@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import Delay from "../../components/Delay/Delay";
 import ItemList from "../../components/ItemList/ItemList";
-import { getProducts, getProductsByCategory } from "../../data/asyncMock";
+import { getDocs, collection, query, where } from "firebase/firestore";
+import { db } from "../../service/firebase";
 import { useParams } from "react-router-dom";
 import "./ItemListContainer.css";
 
@@ -11,20 +12,29 @@ function ItemListContainer(props) {
   const { categoryId } = useParams();
 
   useEffect(() => {
-    const typeGetArgument = categoryId ? getProductsByCategory : getProducts;
-    typeGetArgument(categoryId)
-      .then((products) => {
+    const ref = collection(db, "products");
+
+    const queryTipe = !categoryId ? ref : query(ref, where("category", "==", categoryId));
+
+    getDocs(queryTipe)
+      .then((response) => {
+        const products = response.docs.map((doc) => {
+          const data = doc.data();
+          return { id: doc.id, ...data };
+        });
         setProducts(products);
-        setLoading(true);
       })
       .catch((error) => {
         console.log(error);
+      })
+      .finally(() => {
+        setLoading(true);
       });
-  });
+  }, [categoryId]);
 
   return (
     <>
-      <h1 className="title">{`${props.title} ${categoryId || ''}`}</h1>
+      <h1 className="title">{`${props.title} ${categoryId || ""}`}</h1>
       {!loading && <Delay />}
       {loading && (
         <div className="productsList m-5">
