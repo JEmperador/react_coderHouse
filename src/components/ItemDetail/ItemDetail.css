@@ -1,4 +1,4 @@
-.detailContainer {
+.detail {
     margin-top: 2.5rem;
     display: flex;
     justify-content: space-evenly;
@@ -17,10 +17,12 @@
 }
 
 .description {
+    width: 40rem;
     margin-top: 5rem !important;
     margin-bottom: 10rem;
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 
 .textName {

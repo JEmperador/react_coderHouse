@@ -9,7 +9,7 @@ function CartListContainer(props) {
   const { cart } = useContext(CartContext);
 
   return (
-    <>
+    <div className="CartListContainer">
       <h1 className="title">{props.title}</h1>
       {cart.length !== 0 ? (
         <CartList />
@@ -21,7 +21,7 @@ function CartListContainer(props) {
           </Link>
         </>
       )}
-    </>
+    </div>
   );
 }
 

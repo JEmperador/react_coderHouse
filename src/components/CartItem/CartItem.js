@@ -1,7 +1,8 @@
 import { Badge, Button, ListGroup } from "react-bootstrap";
 import { useContext } from "react";
 import CartContext from "../../context/CartContext";
-import "./CartItem.css"
+import trash from "../../assets/images/trash.svg";
+import "./CartItem.css";
 
 function CartItem({ product }) {
   const { removeItem } = useContext(CartContext);
@@ -11,25 +12,28 @@ function CartItem({ product }) {
   };
 
   return (
-    <ListGroup.Item as="li" key={product.id} className="d-flex justify-content-between mt-2">
-      <img src={product.img} alt="" className="productImg" />
-      <div className="ms-2 me-auto">
-        {product.category} - {product.name}
-        <div>Precio: ${product.price}</div>
-      </div>
-      <div className="d-flex flex-column justify-content-between">
-        <div className="d-flex justify-content-end">
-          <Badge pill className="fs-5" bg="success">
-            {product.quantity}
-          </Badge>
+    <div className="cartItemContainer">
+      <div className="pointer"></div>
+      <ListGroup.Item as="li" key={product.id} className="d-flex justify-content-between cartItem">
+        <img src={product.img} alt="" className="productImg" />
+        <div className="ms-2 me-auto">
+          {product.category} - {product.name}
+          <div>Valor: ${product.price}</div>
         </div>
-        <div className="">
-          <Button className="justify-content-center" variant="warning" onClick={deleteItem}>
-            Quitar
-          </Button>
+        <div className="d-flex flex-column justify-content-between">
+          <div className="d-flex justify-content-end">
+            <Badge pill className="fs-5" bg="success">
+              {product.quantity}
+            </Badge>
+          </div>
+          <div>
+            <Button variant="link" onClick={deleteItem}>
+              <img src={trash} alt="trash" className="trash" />
+            </Button>
+          </div>
         </div>
-      </div>
-    </ListGroup.Item>
+      </ListGroup.Item>
+    </div>
   );
 }
 

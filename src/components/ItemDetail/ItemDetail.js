@@ -12,7 +12,8 @@ function ItemDetail(product) {
     setQuantityToAdd(quantity);
 
     const productToAdd = {
-      ...product, quantity
+      ...product,
+      quantity,
     };
 
     addItem(productToAdd);
@@ -21,20 +22,18 @@ function ItemDetail(product) {
   const productQuantity = getProductQuantity(product.id);
 
   return (
-    <div className="row">
-      <div className="col detailContainer">
-        <div className="containerImg">
-          <img className="detailImg" src={product.img} alt="" />
-        </div>
+    <div className="detail">
+      <div className="containerImg">
+        <img className="detailImg" src={product.img} alt="" />
       </div>
-      <div className="col btn">
+      <div className="description">
+        <p className="text-center">{product.description}</p>
+      </div>
+      <div className="btn">
         <h1 className="text-center textName">{product.name}</h1>
         <h2 className="text-center textCategory">{product.category}</h2>
         <p className="text-center textPrice">$ {product.price}</p>
         <div>{quantityToAdd === 0 ? <ItemCount onAdd={handleOnAdd} initial={productQuantity} stock={product.stock} /> : <OptionButtons />}</div>
-      </div>
-      <div className="row description">
-        <p className="text-center">{product.description}</p>
       </div>
     </div>
   );
