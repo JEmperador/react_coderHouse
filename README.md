@@ -11,6 +11,8 @@ Para ver en más detalle los motivos y razones que llevaron a crear nuestro proy
 -   [Yarn](https://yarnpkg.com/) - Gestor de Dependencias enfocado en la velocidad y seguridad.
 -   [React Router](https://reactrouter.com/docs/en/v6) - Librería para crear las distintas rutas en la aplicación realizada en ReactJS.
 -   [React Bootstrap](https://react-bootstrap.github.io/) - Librería de componentes y estilos CSS.
+-   [Firebase/Firestore](https://firebase.google.com/docs/firestore/) - Base de datos NoSQL flexible, escalable y en la nube.
+-   [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) - Libreria para realizar test sobre componentes con y sin hooks.
 
 ## Instalación
 -   Es necesario contar con un editor de código en su PC, se recomienda [Visual Studio Code](https://code.visualstudio.com/).
@@ -35,4 +37,5 @@ Para ver en más detalle los motivos y razones que llevaron a crear nuestro proy
 | '/'                     | ItemListContainer   | Pantalla Principal   |
 | '/category/:categoryId' | ItemListContainer   | Filtro por Categoría |
 | '/detail/:detailId'     | ItemDetailContainer | Detalle del Producto |
+| '/cart'                 | CartListContainer   | Orden de compra      |
 | '*'                     | Page404             | Ruta errónea         |
