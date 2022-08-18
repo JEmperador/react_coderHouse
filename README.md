@@ -1,7 +1,7 @@
 # Atlas Tech
 
 ## Demo
-![demo](https://user-images.githubusercontent.com/88438404/182710739-44747b2c-92e9-4ea6-9cb7-00f62341fd18.gif)
+![demo](https://user-images.githubusercontent.com/88438404/185408966-dcc9eaee-18a3-4340-87df-ff1b61bd20bd.gif)
 
 ## _Continuación del proyecto creado en el curso de Coder House "Desarrollo Web"_
 Para ver en más detalle los motivos y razones que llevaron a crear nuestro proyecto puede leer en [este](https://github.com/JEmperador/coderHouse_desarrolloWeb) repositorio de github, junto con la primera versión del mismo (creador puramente a partir de HTML y CSS)
