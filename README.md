@@ -4,7 +4,7 @@
 ![demo](https://user-images.githubusercontent.com/88438404/185408966-dcc9eaee-18a3-4340-87df-ff1b61bd20bd.gif)
 
 ## _Continuación del proyecto creado en el curso de Coder House "Desarrollo Web"_
-Para ver en más detalle los motivos y razones que llevaron a crear nuestro proyecto puede leer en [este](https://github.com/JEmperador/coderHouse_desarrolloWeb) repositorio de github, junto con la primera versión del mismo (creador puramente a partir de HTML y CSS)
+Para ver en más detalle los motivos y razones que llevaron a crear nuestro proyecto puede leer en [este](https://github.com/JEmperador/coderHouse_desarrolloWeb) repositorio de github, junto con la primera versión del mismo (creado puramente a partir de HTML y CSS)
 
 ## Tecnologías
 -   [React](https://reactjs.org/) - Librería de JavaScript para trabajar con el FrontEnd del proyecto.
