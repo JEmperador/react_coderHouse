@@ -32,8 +32,8 @@ Para ver en más detalle los motivos y razones que llevaron a crear nuestro proy
     ```
 
 ## Rutas
-| Ruta                    | Componente          | Comentario           |
-|-------------------------|---------------------|----------------------|
+| Ruta                    | Componente          | Detalle              |
+|-------------------------|:-------------------:|---------------------:|
 | '/'                     | ItemListContainer   | Pantalla Principal   |
 | '/category/:categoryId' | ItemListContainer   | Filtro por Categoría |
 | '/detail/:detailId'     | ItemDetailContainer | Detalle del Producto |

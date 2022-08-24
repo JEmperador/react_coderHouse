@@ -1,13 +1,9 @@
-.CartListContainer {
+.formBuyerContainer {
   margin-left: 10rem;
   margin-right: 10rem;
 }
 
-.fontH3 {
-  font-size: 5rem;
-}
-
-.checkoutBtn {
+.createOrderBtn {
   font-size: 2rem !important;
   font-weight: 500 !important;
   width: 25rem;

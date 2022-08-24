@@ -6,7 +6,7 @@ export function CartContextProvider({children}) {
     const [cart, setCart] = useState([])
 
     // console.log(cart); LOG PARA CORROBORAR EN CONSOLA
-
+    
     const emptyCart = () => {
         setCart([])
     }

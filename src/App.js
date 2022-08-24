@@ -9,6 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Page404 from "./components/Page404/Page404";
 import CartListContainer from "./containers/CartListContainer/CartListContainer";
 import { CartContextProvider } from "./context/CartContext";
+import FormBuyerContainer from "./containers/FormBuyerContainer/FormBuyerContainer";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/category/:categoryId" element={<ItemListContainer title="Filtrado por" />} />
             <Route path="/detail/:detailId" element={<ItemDetailContainer title="Detalle" />} />
             <Route path="/cart" element={<CartListContainer title="Su Orden" />} />
+            <Route path="/checkout" element={<FormBuyerContainer title="Datos de comprador" />} />
             <Route path="*" element={<Page404 />} />
           </Routes>
           <Footer />

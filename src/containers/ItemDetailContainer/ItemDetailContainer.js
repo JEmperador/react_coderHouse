@@ -30,7 +30,7 @@ function ItemDetailContainer(props) {
       <h1 className="title">{props.title}</h1>
       {!loading && <Delay />}
       {loading && (
-        <div>
+        <div className="mt-5">
           <ItemDetail {...product} />
         </div>
       )}

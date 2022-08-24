@@ -19,6 +19,9 @@ function CartItem({ product }) {
         <div className="ms-2 me-auto">
           {product.category} - {product.name}
           <div>Valor: ${product.price}</div>
+          <div>
+            <div>Subtotal: ${product.price * product.quantity}</div>
+          </div>
         </div>
         <div className="d-flex flex-column justify-content-between">
           <div className="d-flex justify-content-end">

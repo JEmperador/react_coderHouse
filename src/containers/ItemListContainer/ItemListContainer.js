@@ -37,7 +37,7 @@ function ItemListContainer(props) {
       <h1 className="title">{`${props.title} ${categoryId || ""}`}</h1>
       {!loading && <Delay />}
       {loading && (
-        <div className="productsList m-5">
+        <div className="productsList mt-5">
           <ItemList products={products} />
         </div>
       )}

@@ -1,8 +1,20 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from "@testing-library/react";
+import App from "./App";
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe("App title", () => {
+  it("Renderiza correctamente el titulo Tienda", () => {
+    render(<App />);
+    expect(screen.getByText("Tienda")).toBeInTheDocument();
+  });
+});
+
+describe("App category name", () => {
+  it("Renderiza correctamente los nombres de las categorias", () => {
+    render(<App />);
+    expect(screen.getByText("CPU")).toBeInTheDocument();
+    expect(screen.getByText("GPU")).toBeInTheDocument();
+    expect(screen.getByText("MOTHER")).toBeInTheDocument();
+    expect(screen.getByText("RAM")).toBeInTheDocument();
+    expect(screen.getByText("PSU")).toBeInTheDocument();
+  });
 });
