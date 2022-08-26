@@ -1,7 +1,7 @@
 .fixed {
   opacity: 0.75;
   position: fixed;
-  right: .5rem;
+  right: 1.2rem;
   bottom: 3.5rem;
   transition: opacity .4s;
 }

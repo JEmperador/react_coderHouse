@@ -10,6 +10,7 @@ body {
   font-size: 2rem !important;
   background-color: #eeeeee !important;
   font-family: 'Quicksand', sans-serif !important;
+  overflow-y: overlay;
 }
 
 html {
@@ -23,6 +24,18 @@ html {
   margin-top: 2rem;
 }
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 0px !important;
+} */
+
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 50px;
+    background: #ffc107;
+}
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
 }
