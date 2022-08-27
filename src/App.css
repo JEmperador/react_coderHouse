@@ -24,9 +24,12 @@ html {
   margin-top: 2rem;
 }
 
-/* ::-webkit-scrollbar {
-  width: 0px !important;
-} */
+.loading {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+  height: 80rem;
+}
 
 ::-webkit-scrollbar {
     width: 7px;

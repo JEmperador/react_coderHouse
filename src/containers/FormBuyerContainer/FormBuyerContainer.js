@@ -7,11 +7,6 @@ function FormBuyerContainer(props) {
       <h1 className="title">{props.title}</h1>
       <div className="mt-5">
         <FormBuyer />
-        {/* <div className="d-flex justify-content-center">
-          <Button className="createOrderBtn" size="lg" variant="outline-success" type="submit">
-            Crear orden
-          </Button>
-        </div> */}
       </div>
     </div>
   );
