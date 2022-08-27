@@ -4,6 +4,7 @@ import CartContext from "../../context/CartContext";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import "./CartListContainer.css";
+import Return from "../../components/Return/Return";
 
 function CartListContainer(props) {
   const { cart } = useContext(CartContext);
@@ -24,14 +25,7 @@ function CartListContainer(props) {
             </div>
           </>
         ) : (
-          <>
-            <h3 className="text-center fontH3">Prueba Comprando algo</h3>
-            <Link to="/" className="d-flex justify-content-center">
-              <Button className="toHomeBtn" size="lg">
-                Volver al Inicio
-              </Button>
-            </Link>
-          </>
+          <Return/>
         )}
       </div>
     </div>

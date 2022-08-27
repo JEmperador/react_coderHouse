@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "../../components/ItemDetail/ItemDetail";
 import Delay from "../../components/Delay/Delay";
-import { getDoc, doc } from "firebase/firestore";
-import { db } from "../../service/firebase";
+import { obtProduct } from "../../service/firebase/firestore";
 
 function ItemDetailContainer(props) {
   const [product, setProduct] = useState();
@@ -11,18 +10,14 @@ function ItemDetailContainer(props) {
   const { detailId } = useParams();
 
   useEffect(() => {
-    getDoc(doc(db, "products", detailId))
-      .then((response) => {
-        const data = response.data();
-        const product = { id: response.id, ...data };
-        setProduct(product);
-      })
-      .catch((error) => {
-        console.log(error);
-      })
-      .finally(() => {
-        setLoading(true);
-      });
+
+    obtProduct(detailId).then(product => {
+      setProduct(product)
+    }).catch(error => {
+      console.log(error);
+    }).finally(() => {
+      setLoading(true);
+    })
   }, [detailId]);
 
   return (
