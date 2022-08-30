@@ -21,6 +21,17 @@ function ItemDetail(product) {
 
   const productQuantity = getProductQuantity(product.id);
 
+  const outStock = <h1>Producto fuera de stock</h1>;
+  const withStock = (
+    <>
+      <div className="btnOptions">
+        <h1 className="text-center textName">{product.name}</h1>
+        <h2 className="text-center textCategory">{product.category}</h2>
+        <div>{quantityToAdd === 0 ? <ItemCount onAdd={handleOnAdd} initial={productQuantity} stock={product.stock} /> : <OptionButtons />}</div><p className="text-center textPrice">$ {product.price}</p>
+      </div>
+    </>
+  );
+
   return (
     <div className="detail">
       <div className="containerImg">
@@ -29,12 +40,7 @@ function ItemDetail(product) {
       <div className="description">
         <p className="text-center">{product.description}</p>
       </div>
-      <div className="btn">
-        <h1 className="text-center textName">{product.name}</h1>
-        <h2 className="text-center textCategory">{product.category}</h2>
-        <p className="text-center textPrice">$ {product.price}</p>
-        <div>{quantityToAdd === 0 ? <ItemCount onAdd={handleOnAdd} initial={productQuantity} stock={product.stock} /> : <OptionButtons />}</div>
-      </div>
+      {product.stock <= 0 ? outStock : withStock}
     </div>
   );
 }

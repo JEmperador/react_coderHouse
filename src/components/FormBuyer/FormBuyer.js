@@ -91,12 +91,12 @@ function FormBuyer() {
         const orders = collection(db, "orders");
         const foundedOrder = await addDoc(orders, order);
 
-        emptyCart();
         setOrderId(foundedOrder.id);
         setOrderShipped(true);
         setTimeout(() => {
+          emptyCart();
           to("/");
-        }, 1000000);
+        }, 5000);
       } else {
         console.log("Hay productos que carecen de existencia");
       }
@@ -106,8 +106,6 @@ function FormBuyer() {
       setLoading(false);
     }
   };
-
-  // console.log(buyerData);
 
   if (loading) {
     return <Delay />;
