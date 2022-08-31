@@ -2,24 +2,10 @@ import { useState } from "react";
 import CartContext from "../../context/CartContext";
 import { useContext } from "react";
 import { Button, Form } from "react-bootstrap";
-
-import { db } from "../../service/firebase";
-import { addDoc, collection, documentId, getDocs, query, where, writeBatch } from "firebase/firestore";
-
 import "./FormBuyer.css";
-import Delay from "../Delay/Delay";
-import { useNavigate } from "react-router-dom";
 
 function FormBuyer() {
-  const { cart, totalPrice, emptyCart } = useContext(CartContext);
-
-  const items = cart;
-  const total = totalPrice();
-
-  const [loading, setLoading] = useState(false);
-  const [orderShipped, setOrderShipped] = useState(false);
-  const [orderId, setOrderId] = useState();
-
+  const { createOrder } = useContext(CartContext);
   const [buyerData, setBuyerData] = useState({});
   const [name, setName] = useState(false);
   const [email, setEmail] = useState(false);
@@ -51,69 +37,8 @@ function FormBuyer() {
     }
   };
 
-  const to = useNavigate();
-
-  const createOrder = async (buyerData) => {
-    setLoading(true);
-    try {
-      const order = {
-        buyer: buyerData,
-        items,
-        total,
-        date: new Date(),
-      };
-
-      const ids = items.map((prod) => prod.id);
-      const ref = collection(db, "products");
-      const productsDB = await getDocs(query(ref, where(documentId(), "in", ids)));
-
-      const { docs } = productsDB;
-      const outStock = [];
-      const lot = writeBatch(db);
-
-      docs.forEach((doc) => {
-        const infoDoc = doc.data();
-        const stockDB = infoDoc.stock;
-
-        const stockCart = cart.find((prod) => prod.id === doc.id);
-        const prodQuantity = stockCart?.quantity;
-
-        if (stockDB >= prodQuantity) {
-          lot.update(doc.ref, { stock: stockDB - prodQuantity });
-        } else {
-          outStock.push({ id: doc.id, ...infoDoc });
-        }
-      });
-
-      if (outStock.length === 0) {
-        await lot.commit();
-
-        const orders = collection(db, "orders");
-        const foundedOrder = await addDoc(orders, order);
-
-        setOrderId(foundedOrder.id);
-        setOrderShipped(true);
-        setTimeout(() => {
-          emptyCart();
-          to("/");
-        }, 5000);
-      } else {
-        console.log("Hay productos que carecen de existencia");
-      }
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  if (loading) {
-    return <Delay />;
-  }
-
   return (
     <>
-      {!orderShipped && (
         <>
           <Form className="mt-2">
             <Form.Group className="mb-3">
@@ -189,13 +114,6 @@ function FormBuyer() {
             </Button>
           </div>
         </>
-      )}
-      {orderShipped && 
-        <>
-          <h1 className="text-center">Operacion: <span className="order">{orderId}</span></h1>
-          <h2 className="text-center">Nos pondremos en contacto, sera redirigido al inicio</h2>
-        </>
-      }
     </>
   );
 }
