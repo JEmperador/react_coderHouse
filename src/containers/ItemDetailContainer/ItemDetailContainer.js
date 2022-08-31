@@ -1,35 +1,25 @@
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "../../components/ItemDetail/ItemDetail";
 import Delay from "../../components/Delay/Delay";
 import { obtProduct } from "../../service/firebase/firestore";
+import { useAsync } from '../../hooks/useAsync'
 
 function ItemDetailContainer(props) {
-  const [product, setProduct] = useState();
-  const [loading, setLoading] = useState(false);
   const { detailId } = useParams();
-
-  useEffect(() => {
-
-    obtProduct(detailId).then(product => {
-      setProduct(product)
-    }).catch(error => {
-      console.log(error);
-    }).finally(() => {
-      setLoading(true);
-    })
-  }, [detailId]);
+  const obtProd = () => obtProduct(detailId);
+  const {data, error, loading} = useAsync(obtProd, [detailId]);
 
   return (
-    <div>
+    <>
+      {error && <h1>Hubo un error, recarga la pagina</h1>}
       <h1 className="title">{props.title}</h1>
       {!loading && <Delay />}
       {loading && (
         <div className="mt-5">
-          <ItemDetail {...product} />
+          <ItemDetail {...data} />
         </div>
       )}
-    </div>
+    </>
   );
 }
 

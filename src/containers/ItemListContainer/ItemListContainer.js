@@ -1,34 +1,24 @@
-import { useEffect, useState } from "react";
 import Delay from "../../components/Delay/Delay";
 import ItemList from "../../components/ItemList/ItemList";
 import { useParams } from "react-router-dom";
 import "./ItemListContainer.css";
 import { obtProducts } from "../../service/firebase/firestore";
+import { useAsync } from '../../hooks/useAsync'
 
 function ItemListContainer(props) {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(false);
   const { categoryId } = useParams();
-
-  useEffect(() => {
-
-    obtProducts(categoryId).then(products => {
-      setProducts(products)
-    }).catch(error => {
-      console.log(error);
-    }).finally(() => {
-      setLoading(true);
-    })
-  }, [categoryId]);
+  const obtProds = () => obtProducts(categoryId);
+  const {data, error, loading} = useAsync(obtProds, [categoryId]);
 
   return (
     <>
+      {error && <h1>Hubo un error, recarga la pagina</h1>}
       <h1 className="title">{`${props.title} ${categoryId || ""}`}</h1>
       {!loading && <Delay />}
       {loading && (
         <>
           <div className="productsList mt-5">
-            <ItemList products={products} />
+            <ItemList products={data} />
           </div>
           <div className="WaLink text-center">
             <p>
