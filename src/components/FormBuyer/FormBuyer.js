@@ -3,22 +3,22 @@ import CartContext from "../../context/CartContext";
 import { useContext } from "react";
 import { Button, Form } from "react-bootstrap";
 
-import { db } from "../../service/firebase";
-import { addDoc, collection, documentId, getDocs, query, where, writeBatch } from "firebase/firestore";
+/* import { db } from "../../service/firebase";
+import { addDoc, collection, documentId, getDocs, query, where, writeBatch } from "firebase/firestore"; */
 
 import "./FormBuyer.css";
-import Delay from "../Delay/Delay";
-import { useNavigate } from "react-router-dom";
+/* import Delay from "../Delay/Delay"; */
+/* import { useNavigate } from "react-router-dom"; */
 
 function FormBuyer() {
-  const { cart, totalPrice, emptyCart } = useContext(CartContext);
+  const { /* cart, totalPrice, emptyCart */ createOrder } = useContext(CartContext);
 
-  const items = cart;
+  /* const items = cart;
   const total = totalPrice();
 
-  const [loading, setLoading] = useState(false);
-  const [orderShipped, setOrderShipped] = useState(false);
-  const [orderId, setOrderId] = useState();
+  const [loading, setLoading] = useState(false); */
+/*   const [orderShipped, setOrderShipped] = useState(false);
+  const [orderId, setOrderId] = useState(); */
 
   const [buyerData, setBuyerData] = useState({});
   const [name, setName] = useState(false);
@@ -51,9 +51,9 @@ function FormBuyer() {
     }
   };
 
-  const to = useNavigate();
+  /* const to = useNavigate(); */
 
-  const createOrder = async (buyerData) => {
+  /* const createOrder = async (buyerData) => {
     setLoading(true);
     try {
       const order = {
@@ -105,15 +105,15 @@ function FormBuyer() {
     } finally {
       setLoading(false);
     }
-  };
+  }; */
 
-  if (loading) {
+  /* if (loading) {
     return <Delay />;
-  }
+  } */
 
   return (
     <>
-      {!orderShipped && (
+      {/* {!orderShipped && ( */}
         <>
           <Form className="mt-2">
             <Form.Group className="mb-3">
@@ -189,13 +189,13 @@ function FormBuyer() {
             </Button>
           </div>
         </>
-      )}
+      {/* )}
       {orderShipped && 
         <>
           <h1 className="text-center">Operacion: <span className="order">{orderId}</span></h1>
           <h2 className="text-center">Nos pondremos en contacto, sera redirigido al inicio</h2>
         </>
-      }
+      } */}
     </>
   );
 }
