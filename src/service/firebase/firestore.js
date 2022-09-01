@@ -1,5 +1,6 @@
 import { getDocs, collection, query, where, orderBy, getDoc, doc } from "firebase/firestore";
 import { db } from ".";
+import { adapter } from "../../adapters/prodAdapter";
 
 export const obtProducts = (categoryId) => {
   const ref = query(collection(db, "products"));
@@ -10,8 +11,7 @@ export const obtProducts = (categoryId) => {
   return getDocs(queryTipe)
     .then((response) => {
       const products = response.docs.map((doc) => {
-        const data = doc.data();
-        return { id: doc.id, ...data };
+        return adapter(doc)
       });
       return products;
     })

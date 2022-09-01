@@ -16,10 +16,10 @@ Para ver en más detalle los motivos y razones que llevaron a crear nuestro proy
 
 ## Instalación
 -   Es necesario contar con un editor de código en su PC, se recomienda [Visual Studio Code](https://code.visualstudio.com/).
--   Debe contar tambien con una termina, se recomienda [GitBash](https://git-scm.com/)
+-   Debe contar tambien con una terminal, se recomienda [GitBash](https://git-scm.com/)
 -   Abrir GitBash en la carpeta donde clonara el repositorio.
 -   Ingrese a este [link](https://github.com/JEmperador/react_coderHouse.git) para obtener repositorio con el protocolo HTTPS.
--   En la termina GitBash utilice siguiente línea de comando:
+-   En la terminal GitBash utilice siguiente línea de comando:
     ```bash
     $ git clone <repositorio HTTPS>
     ```
@@ -30,6 +30,10 @@ Para ver en más detalle los motivos y razones que llevaron a crear nuestro proy
     $ npm install --global yarn
     $ yarn
     ```
+-   Por último, si desea comprobar test, debe colocar en la terminal la siguiente línea de comando:
+    ```bash
+    $ yarn test
+    ```
 
 ## Rutas
 | Ruta                    | Componente          | Detalle              |
@@ -38,4 +42,5 @@ Para ver en más detalle los motivos y razones que llevaron a crear nuestro proy
 | '/category/:categoryId' | ItemListContainer   | Filtro por Categoría |
 | '/detail/:detailId'     | ItemDetailContainer | Detalle del Producto |
 | '/cart'                 | CartListContainer   | Orden de compra      |
+| '/checkout'             | FormBuyerContainer  | Datos de comprador   |
 | '*'                     | Page404             | Ruta errónea         |

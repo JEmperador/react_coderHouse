@@ -96,7 +96,7 @@ function FormBuyer() {
         setTimeout(() => {
           emptyCart();
           to("/");
-        }, 5000);
+        }, 10000);
       } else {
         console.log("Hay productos que carecen de existencia");
       }
@@ -192,8 +192,9 @@ function FormBuyer() {
       )}
       {orderShipped && 
         <>
-          <h1 className="text-center">Operacion: <span className="order">{orderId}</span></h1>
-          <h2 className="text-center">Nos pondremos en contacto, sera redirigido al inicio</h2>
+          <h1 className="text-center">Compra realizada con éxito, nos pondremos en contacto</h1>
+          <h2 className="text-center">Operacion: <span className="order">{orderId}</span></h2>
+          <Delay/>
         </>
       }
     </>
