@@ -9,13 +9,7 @@ function FormBuyerContainer(props) {
   return (
     <div className="formBuyerContainer">
       <h1 className="title">{props.title}</h1>
-      <div className="mt-5">
-        {cart.length !== 0 ? (
-          <FormBuyer />
-        ) : (
-          <Return/>
-        )}
-      </div>
+      <div className="mt-5">{cart.length !== 0 ? <FormBuyer /> : <Return />}</div>
     </div>
   );
 }

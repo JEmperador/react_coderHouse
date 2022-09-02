@@ -1,19 +1,19 @@
 .navbarLogo {
-    width: 6.4rem;
-    height: 6.4rem;
+  width: 6.4rem;
+  height: 6.4rem;
 }
 
 .font {
-    margin: 0 .5rem 0 .5rem;
-    font-size: 2rem;
-    font-weight: 300;
+  margin: 0 0.5rem 0 0.5rem;
+  font-size: 2rem;
+  font-weight: 300;
 }
 
 .nav-link {
-    padding: 0 !important;
+  padding: 0 !important;
 }
 
 .counter {
-    position: absolute;
-    transform: translateX(200%) translateY(70%);
+  position: absolute;
+  transform: translateX(200%) translateY(70%);
 }

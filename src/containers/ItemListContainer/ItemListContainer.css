@@ -1,10 +1,10 @@
 .productsList {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .WaLink {
-    text-decoration: none;
-    margin-bottom: 5rem;
+  text-decoration: none;
+  margin-bottom: 5rem;
 }

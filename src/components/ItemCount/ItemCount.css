@@ -1,19 +1,19 @@
-.quantity{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    width: 5rem;
-    border-top: 1px solid #0d6efd;
-    border-bottom: 1px solid #0d6efd;
+.quantity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  width: 5rem;
+  border-top: 1px solid #0d6efd;
+  border-bottom: 1px solid #0d6efd;
 }
 
 .quantityBtn {
-    font-size: 2rem !important;
+  font-size: 2rem !important;
 }
 
 .addBtn {
-    font-size: 2rem !important;
-    font-weight: 500 !important;
-    width: 11rem;
+  font-size: 2rem !important;
+  font-weight: 500 !important;
+  width: 11rem;
 }

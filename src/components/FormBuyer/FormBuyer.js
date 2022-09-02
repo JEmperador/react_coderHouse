@@ -190,13 +190,15 @@ function FormBuyer() {
           </div>
         </>
       )}
-      {orderShipped && 
+      {orderShipped && (
         <>
           <h1 className="text-center">Compra realizada con éxito, nos pondremos en contacto</h1>
-          <h2 className="text-center">Operacion: <span className="order">{orderId}</span></h2>
-          <Delay/>
+          <h2 className="text-center">
+            Operacion: <span className="order">{orderId}</span>
+          </h2>
+          <Delay />
         </>
-      }
+      )}
     </>
   );
 }

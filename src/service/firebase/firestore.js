@@ -11,7 +11,7 @@ export const obtProducts = (categoryId) => {
   return getDocs(queryTipe)
     .then((response) => {
       const products = response.docs.map((doc) => {
-        return adapter(doc)
+        return adapter(doc);
       });
       return products;
     })
@@ -21,13 +21,13 @@ export const obtProducts = (categoryId) => {
 };
 
 export const obtProduct = (detailId) => {
-    return getDoc(doc(db, "products", detailId))
-      .then((resp) => {
-        const data = resp.data();
-        const product = { id: resp.id, ...data };
-        return product;
-      })
-      .catch((error) => {
-        return error;
-      })
-}
+  return getDoc(doc(db, "products", detailId))
+    .then((resp) => {
+      const data = resp.data();
+      const product = { id: resp.id, ...data };
+      return product;
+    })
+    .catch((error) => {
+      return error;
+    });
+};

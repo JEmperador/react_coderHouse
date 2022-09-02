@@ -1,6 +1,6 @@
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import './Return.css'
+import "./Return.css";
 
 function Return() {
   return (
@@ -14,6 +14,5 @@ function Return() {
     </>
   );
 }
-
 
 export default Return;

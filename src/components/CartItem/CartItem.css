@@ -1,25 +1,25 @@
-.cartItemContainer{
-    margin-top: .5rem;
-    display: flex;
-    align-items: center;
+.cartItemContainer {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
 }
 
-.cartItem{
-    width: 100%;
+.cartItem {
+  width: 100%;
 }
 
 .productImg {
-    width: 15rem;
-    height: 15rem;
+  width: 15rem;
+  height: 15rem;
 }
 
 .pointer {
-    background-color: #ffc107;
-    width: 1rem;
-    height: 16.2rem;
-    border-radius: .30rem 0 0 .30rem;
+  background-color: #ffc107;
+  width: 1rem;
+  height: 16.2rem;
+  border-radius: 0.3rem 0 0 0.3rem;
 }
 
-.trash{
-    width: 2rem;
+.trash {
+  width: 2rem;
 }

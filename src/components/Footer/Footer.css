@@ -1,11 +1,11 @@
 .footer {
-    position: fixed;
-    bottom: 0px;
-    width: 100%;
-    background-color: rgb(33,37,41);
-    font-size: 1.5rem;
-    color: #eeeeee;
-    padding: .375rem;
-    display: flex;
-    justify-content: center;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  background-color: rgb(33, 37, 41);
+  font-size: 1.5rem;
+  color: #eeeeee;
+  padding: 0.375rem;
+  display: flex;
+  justify-content: center;
 }

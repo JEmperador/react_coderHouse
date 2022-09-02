@@ -2,12 +2,12 @@ import { useParams } from "react-router-dom";
 import ItemDetail from "../../components/ItemDetail/ItemDetail";
 import Delay from "../../components/Delay/Delay";
 import { obtProduct } from "../../service/firebase/firestore";
-import { useAsync } from '../../hooks/useAsync'
+import { useAsync } from "../../hooks/useAsync";
 
 function ItemDetailContainer(props) {
   const { detailId } = useParams();
   const obtProd = () => obtProduct(detailId);
-  const {data, error, loading} = useAsync(obtProd, [detailId]);
+  const { data, error, loading } = useAsync(obtProd, [detailId]);
 
   return (
     <>

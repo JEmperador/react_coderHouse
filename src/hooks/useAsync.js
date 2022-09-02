@@ -18,5 +18,5 @@ export const useAsync = (asyncFunction, dependencies = []) => {
       });
   }, dependencies);
 
-  return {data, error, loading}
+  return { data, error, loading };
 };

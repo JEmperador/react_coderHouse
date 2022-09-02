@@ -27,7 +27,8 @@ function ItemDetail(product) {
       <div className="btnOptions">
         <h1 className="text-center textName">{product.name}</h1>
         <h2 className="text-center textCategory">{product.category}</h2>
-        <div>{quantityToAdd === 0 ? <ItemCount onAdd={handleOnAdd} initial={productQuantity} stock={product.stock} /> : <OptionButtons />}</div><p className="text-center textPrice">$ {product.price}</p>
+        <div>{quantityToAdd === 0 ? <ItemCount onAdd={handleOnAdd} initial={productQuantity} stock={product.stock} /> : <OptionButtons />}</div>
+        <p className="text-center textPrice">$ {product.price}</p>
       </div>
     </>
   );

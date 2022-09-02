@@ -1,6 +1,6 @@
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import "./OptionButtons.css"
+import "./OptionButtons.css";
 
 function OptionButtons() {
   return (

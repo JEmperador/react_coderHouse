@@ -12,7 +12,7 @@ function CartWidget() {
 
   return (
     <div>
-      <Link to={quantity !==0 ? "/cart" : "/"}>
+      <Link to={quantity !== 0 ? "/cart" : "/"}>
         <Badge pill className="fs-6 counter" bg="primary">
           {quantity !== 0 && quantity}
         </Badge>

@@ -3,7 +3,7 @@
   position: fixed;
   right: 1.2rem;
   bottom: 3.5rem;
-  transition: opacity .4s;
+  transition: opacity 0.4s;
 }
 
 .fixed:hover {
