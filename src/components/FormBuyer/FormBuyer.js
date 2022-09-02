@@ -2,9 +2,7 @@ import { useState } from "react";
 import CartContext from "../../context/CartContext";
 import { useContext } from "react";
 import { Button, Form } from "react-bootstrap";
-
-import { db } from "../../service/firebase";
-import { addDoc, collection, documentId, getDocs, query, where, writeBatch } from "firebase/firestore";
+import { obtOrder } from "../../service/firebase/firestore";
 
 import "./FormBuyer.css";
 import Delay from "../Delay/Delay";
@@ -18,7 +16,6 @@ function FormBuyer() {
 
   const [loading, setLoading] = useState(false);
   const [orderShipped, setOrderShipped] = useState(false);
-  const [orderId, setOrderId] = useState();
 
   const [buyerData, setBuyerData] = useState({});
   const [name, setName] = useState(false);
@@ -63,43 +60,13 @@ function FormBuyer() {
         date: new Date(),
       };
 
-      const ids = items.map((prod) => prod.id);
-      const ref = collection(db, "products");
-      const productsDB = await getDocs(query(ref, where(documentId(), "in", ids)));
-
-      const { docs } = productsDB;
-      const outStock = [];
-      const lot = writeBatch(db);
-
-      docs.forEach((doc) => {
-        const infoDoc = doc.data();
-        const stockDB = infoDoc.stock;
-
-        const stockCart = cart.find((prod) => prod.id === doc.id);
-        const prodQuantity = stockCart?.quantity;
-
-        if (stockDB >= prodQuantity) {
-          lot.update(doc.ref, { stock: stockDB - prodQuantity });
-        } else {
-          outStock.push({ id: doc.id, ...infoDoc });
-        }
-      });
-
-      if (outStock.length === 0) {
-        await lot.commit();
-
-        const orders = collection(db, "orders");
-        const foundedOrder = await addDoc(orders, order);
-
-        setOrderId(foundedOrder.id);
-        setOrderShipped(true);
+      obtOrder(order, items).then((res) => {
+        setOrderShipped(res)
         setTimeout(() => {
           emptyCart();
           to("/");
         }, 10000);
-      } else {
-        console.log("Hay productos que carecen de existencia");
-      }
+      })
     } catch (error) {
       console.log(error);
     } finally {
@@ -194,7 +161,7 @@ function FormBuyer() {
         <>
           <h1 className="text-center">Compra realizada con éxito, nos pondremos en contacto</h1>
           <h2 className="text-center">
-            Operacion: <span className="order">{orderId}</span>
+            Operacion: <span className="order">{orderShipped.id}</span>
           </h2>
           <Delay />
         </>
