@@ -1,9 +1,9 @@
-import Delay from "../../components/Delay/Delay";
-import ItemList from "../../components/ItemList/ItemList";
 import { useParams } from "react-router-dom";
-import "./ItemListContainer.css";
 import { obtProducts } from "../../service/firebase/firestore";
 import { useAsync } from "../../hooks/useAsync";
+import ItemList from "../../components/ItemList/ItemList";
+import Delay from "../../components/Delay/Delay";
+import "./ItemListContainer.css";
 
 function ItemListContainer(props) {
   const { categoryId } = useParams();

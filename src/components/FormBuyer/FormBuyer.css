@@ -1,9 +1,12 @@
 .form {
-  font-size: 1.5rem;
+  font-size: 1.5rem !important;
 }
 
 .createOrderBtn {
   margin-top: 3rem;
+  font-size: 2rem !important;
+  font-weight: 500 !important;
+  width: 25rem;
 }
 
 .order {

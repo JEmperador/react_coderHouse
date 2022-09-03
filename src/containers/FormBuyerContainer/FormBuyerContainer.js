@@ -1,8 +1,8 @@
-import FormBuyer from "../../components/FormBuyer/FormBuyer";
 import { useContext } from "react";
 import CartContext from "../../context/CartContext";
-import "./FormBuyerContainer.css";
+import FormBuyer from "../../components/FormBuyer/FormBuyer";
 import Return from "../../components/Return/Return";
+import "./FormBuyerContainer.css";
 
 function FormBuyerContainer(props) {
   const { cart } = useContext(CartContext);

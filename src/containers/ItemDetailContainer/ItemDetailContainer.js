@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
-import ItemDetail from "../../components/ItemDetail/ItemDetail";
-import Delay from "../../components/Delay/Delay";
 import { obtProduct } from "../../service/firebase/firestore";
 import { useAsync } from "../../hooks/useAsync";
+import ItemDetail from "../../components/ItemDetail/ItemDetail";
+import Delay from "../../components/Delay/Delay";
 
 function ItemDetailContainer(props) {
   const { detailId } = useParams();

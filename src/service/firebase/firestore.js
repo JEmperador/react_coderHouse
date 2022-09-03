@@ -1,6 +1,6 @@
 import { getDocs, collection, query, where, orderBy, getDoc, doc, documentId, writeBatch, addDoc } from "firebase/firestore";
-import { db } from ".";
 import { adapter } from "../../adapters/prodAdapter";
+import { db } from ".";
 
 export const obtProducts = (categoryId) => {
   const ref = query(collection(db, "products"));

@@ -1,7 +1,7 @@
 import { Button, ListGroup } from "react-bootstrap";
-import CartItem from "../CartItem/CartItem";
 import { useContext } from "react";
 import CartContext from "../../context/CartContext";
+import CartItem from "../CartItem/CartItem";
 import "./CartList.css";
 
 function CartList() {

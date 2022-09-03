@@ -1,12 +1,11 @@
 import { useState } from "react";
-import CartContext from "../../context/CartContext";
-import { useContext } from "react";
 import { Button, Form } from "react-bootstrap";
 import { obtOrder } from "../../service/firebase/firestore";
-
-import "./FormBuyer.css";
-import Delay from "../Delay/Delay";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import CartContext from "../../context/CartContext";
+import Delay from "../Delay/Delay";
+import "./FormBuyer.css";
 
 function FormBuyer() {
   const { cart, totalPrice, emptyCart } = useContext(CartContext);
@@ -35,15 +34,32 @@ function FormBuyer() {
   };
 
   const dataManagement = () => {
-    setName(!buyerData.name);
-    setEmail(!buyerData.email);
-    setEmail2(!(buyerData.email2 === buyerData.email));
-    setContact(!buyerData.contact);
-    setComment(!buyerData.comment);
-    setCity(!buyerData.city);
-    setStreet(!buyerData.street);
-    setNumeration(!buyerData.numeration);
-    if (buyerData.name && buyerData.email && buyerData.email2 === buyerData.email && buyerData.contact && buyerData.comment && buyerData.city && buyerData.street && buyerData.numeration) {
+    const { name, email, email2, contact, comment, city, street, numeration } = buyerData;
+
+    let regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
+    let regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
+    let regexContact = /^[0-9/-]+$/;
+    let regexComments = /^.{0,255}$/;
+
+    let nameErr = !name || !regexName.test(name);
+    let emailErr = !email || !regexEmail.test(email);
+    let email2Err = !(email2 === email);
+    let contactErr = !contact || !regexContact.test(contact);
+    let commentErr = !regexComments.test(comment);
+    let cityErr = !city;
+    let streetErr = !street;
+    let numerationErr = !numeration;
+
+    setName(nameErr);
+    setEmail(emailErr);
+    setEmail2(email2Err);
+    setContact(contactErr);
+    setComment(commentErr);
+    setCity(cityErr);
+    setStreet(streetErr);
+    setNumeration(numerationErr);
+
+    if (!nameErr && !emailErr && !email2Err && !commentErr && !contactErr && !cityErr && !streetErr && !numerationErr) {
       createOrder(buyerData);
     }
   };
@@ -61,12 +77,12 @@ function FormBuyer() {
       };
 
       obtOrder(order, items).then((res) => {
-        setOrderShipped(res)
+        setOrderShipped(res);
         setTimeout(() => {
           emptyCart();
           to("/");
         }, 10000);
-      })
+      });
     } catch (error) {
       console.log(error);
     } finally {
